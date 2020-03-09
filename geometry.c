@@ -34,6 +34,7 @@ int main() {
         } else {
             printf("Error: '%s' - unknown shape\n", type);
         }
+        i++;
     }
 
     return 0;
