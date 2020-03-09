@@ -16,7 +16,7 @@ int main() {
     Circle circle[10];
     char type[10];
     int i = 0;
-    
+
     FILE *file;
     file = fopen("figures.txt", "r");
 
@@ -26,11 +26,14 @@ int main() {
                 &circle[num_of_c].center.x, 
                 &circle[num_of_c].center.y,
                 &circle[num_of_c].radius); /* Присваиваем окружности значения его центра и радиуса */
-            printf("%s[%d] (%d %d, %d)", type, i, 
+            printf("%s[%d] (%d %d, %d)\n", type, i, 
                 &circle[num_of_c].center.x, 
                 &circle[num_of_c].center.y, 
                 &circle[num_of_c].radius);
         } else {
-            printf("Error: '%s'? Unknown shape\n", type);
+            printf("Error: '%s' - unknown shape\n", type);
         }
+    }
+
+    return 0;
 }
