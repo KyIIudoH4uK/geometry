@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 typedef struct {
     int x;
@@ -23,13 +24,13 @@ int main() {
     while ((fscanf(file, "%s", type)) != EOF) { /* Считываем название фигуры */
         if((strcmp(type, "circle")) == 0) { /* Проверяем, является ли фигура окружностью */
             fscanf(file, " (%d %d, %d)", 
-                &circle[num_of_c].center.x, 
-                &circle[num_of_c].center.y,
-                &circle[num_of_c].radius); /* Присваиваем окружности значения его центра и радиуса */
+                &circle[i].center.x, 
+                &circle[i].center.y,
+                &circle[i].radius); /* Присваиваем окружности значения его центра и радиуса */
             printf("%s[%d] (%d %d, %d)\n", type, i, 
-                &circle[num_of_c].center.x, 
-                &circle[num_of_c].center.y, 
-                &circle[num_of_c].radius);
+                circle[i].center.x, 
+                circle[i].center.y, 
+                circle[i].radius);
         } else {
             printf("Error: '%s' - unknown shape\n", type);
         }
